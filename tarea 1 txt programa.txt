@@ -1,0 +1,105 @@
+CREATE TABLE CLIENTES (
+	Id_cliente Int,
+    Rut Varchar(20) NOT NULL,
+    Codigounico Varchar(20) NOT NULL,
+    Nombrecliente Varchar(20) NOT NULL,
+    Apellidopaternocliente Varchar(20) NOT NULL,
+    Apellidomaternocliente Varchar(20) NOT NULL,
+    Direccion Varchar (140) NOT NULL,
+    Telefono number,
+    PRIMARY KEY(Rut)
+);
+CREATE TABLE AVALADOS (
+    Id_Avala INT NOT NULL,
+    Id_Clienteavala INT NOT NULL,
+    Id_Clienteavalado INT NOT NULL,
+    Avalado bit,
+    PRIMARY KEY (Id_avala)
+);
+CREATE TABLE RESERVACIONES (
+    Id_reservacion Int,
+    Fecha_inicio Data time,
+    Fecha_fin Data time,
+    precio_total_reserva ,
+    Entregado Bit,
+    Id_Agencia Int,
+    Id_Coche Int,
+    primary key (Id_Reservacion),
+    foreign key (Id_Agencia) references AGENCIA(Id_Agencia),
+    foreign key (Id_Coche) references COCHE(Id_Coche)
+);
+CREATE TABLE AGENCIA (
+    Id_Agencia Int,
+    Nombre_Agencia varchar(50)
+);
+CREATE TABLE COCHES (
+    Id_Coche Int,
+    Matricula Varchar(20),
+    Marca Varchar(50),
+    Modelo Varchar(50),
+    Color Varchar(20),
+    CuantosLitrosTiene Int,
+    Precioalquiler Decimal(10,2),
+    Id_Garage Int,
+    primary key (Id_Coche),
+    foreign key (Id_garage) references Garage (Id_Garage)
+);
+CREATE TABLE GARAGE (
+    Id_Garage Int, primary key,
+    Nombre_Garage Varchar(20),
+    primary key (Id_garage)
+);
+
+prueba 2
+
+CREATE TABLE CLIENTES ( Id_cliente Int,
+    Rut Varchar(20) NOT NULL,
+    Codigounico Varchar(20) NOT NULL,
+    Nombrecliente Varchar(20) NOT NULL,
+    Apellidopaternocliente Varchar(20) NOT NULL,
+    Apellidomaternocliente Varchar(20) NOT NULL,
+    Direccion Varchar (140) NOT NULL,
+    Telefono number,
+    PRIMARY KEY(Rut)
+    );
+insert into clientes values ()
+
+create table AVALADOS (id_avala varchar, not null,
+        id_cliente_avala varchar, not null,
+        id_cliente_avalado varchar, not null,
+        avalado bit, not null,
+        primary key (id_avala)   
+);
+
+CREATE TABLE RESERVACIONES ( Id_reservacion Int,
+    Fecha_inicio Data time,
+    Fecha_fin Data time,
+    precio_total_reserva ,
+    Entregado Bit,
+    Id_Agencia Int,
+    Id_Coche Int,
+    primary key (Id_Reservacion),
+    foreign key (Id_Agencia) references AGENCIA(Id_Agencia),
+    foreign key (Id_Coche) references COCHE(Id_Coche)
+);
+    
+CREATE TABLE AGENCIA (
+    Id_Agencia Int,
+    Nombre_Agencia varchar(50)
+);
+CREATE TABLE COCHES (
+    Id_Coche Int,
+    Matricula Varchar(20),
+    Marca Varchar(50),
+    Modelo Varchar(50),
+    Color Varchar(20),
+    CuantosLitrosTiene Int,
+    Precioalquiler Decimal(10,2),
+    Id_Garage Int,
+    primary key (Id_Coche),
+    foreign key (Id_garage) references Garage (Id_Garage)
+);
+CREATE TABLE GARAGE (Id_Garage Int, primary key,
+    Nombre_Garage Varchar(20),
+    primary key (Id_garage)    
+);
